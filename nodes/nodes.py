@@ -40,11 +40,15 @@ class CircleDetection:
     FUNCTION = "circle_detection"
     CATEGORY = "🧬 Object Detection Nodes"
     
-    def draw_circles(self, img, detected_circles, debug):
+    def draw_circles(self, img, detected_circles, debug, color_tuple_str):
         '''Draw circles.'''
         # Copy image to a new image. 
         newImg = img.copy()
-        COLOR_TUPLE = (255, 0, 255)
+        strippedText = str(color_tuple_str).replace('(','').replace(')','').strip()
+        rgb = strippedText.split(",")
+        r,g,b = rgb[0].strip(), rgb[1].strip(), rgb[2].strip() 
+        color_tuple = (r,g,b)  
+        #COLOR_TUPLE = (255, 0, 255)
         THICKNESS = 5
         # Declare local variables.
         a, b, r = 0, 0, 0
@@ -60,9 +64,9 @@ class CircleDetection:
                 # Get the circle data.
                 a, b, r = pnt[0], pnt[1], pnt[2]
                 # Draw the circumference of the circle.
-                cv2.circle(newImg, (a, b), r, COLOR_TUPLE, THICKNESS)
+                cv2.circle(newImg, (a, b), r, color_tuple, THICKNESS)
                 # Draw a small circle of radius 1 to show the center.
-                cv2.circle(newImg, (a, b), 1, COLOR_TUPLE, 3)
+                cv2.circle(newImg, (a, b), 1, color_tuple, 3)
                 # Print dimensions and radius.
                 if debug: 
                     print("No.:", count, "x:", a, "y", b, "r:", r)
@@ -102,10 +106,10 @@ class CircleDetection:
         # Return detected_circles.
         return detected_circles
 
-    def post_img(self, img, detected_circles, debug):
+    def post_img(self, img, detected_circles, debug, color_tuple):
         '''Postprocess image.'''
         # Draw circles.
-        img, (a, b, r) = self.draw_circles(img, detected_circles, debug)
+        img, (a, b, r) = self.draw_circles(img, detected_circles, debug, color_tuple)
         # Return image and tuple.
         return img, (a, b, r)
 
@@ -129,7 +133,7 @@ class CircleDetection:
         # Process image. Detect circles.
         detected_circles = self.detect_circles(gray_blur, threshold_canny_edge, threshold_circle_center, minR, maxR, minDist, dp, debug)
         # Postrocess image.
-        img_output, _ = self.post_img(img_input, detected_circles, debug)
+        img_output, _ = self.post_img(img_input, detected_circles, debug, color_tuple)
         # Create output image.
         img_output = Image.fromarray(img_output)
         # Create tensor.
