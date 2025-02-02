@@ -49,7 +49,7 @@ class CircleDetection:
         print(strippedText)
         rgb = strippedText.split(",")
         print(rgb)
-        r,g,b = rgb[0].strip(), rgb[1].strip(), rgb[2].strip() 
+        r,g,b = int(rgb[0].strip()), int(rgb[1].strip()), int(rgb[2].strip()) 
         color_tuple = (r,g,b)  
         #COLOR_TUPLE = (255, 0, 255)
         THICKNESS = 5
