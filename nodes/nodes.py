@@ -32,6 +32,7 @@ class CircleDetection:
                 "dp": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 1000.0}),
                 "minDist": ("FLOAT", {"default": 20.0, "min": 0.0, "max": 2048.0}),
                 "color_tuple": ("STRING", {"multiline": False, "default": "(255, 0, 255)"}),
+                "thickness": ("FLOAT", {"default": 2.0, "min": 0.0, "max": 256.0}),
             }
         }
 
@@ -40,7 +41,7 @@ class CircleDetection:
     FUNCTION = "circle_detection"
     CATEGORY = "🧬 Object Detection Nodes"
     
-    def draw_circles(self, img, detected_circles, debug, color_tuple_str):
+    def draw_circles(self, img, detected_circles, debug, color_tuple_str, thickness):
         '''Draw circles.'''
         print(color_tuple_str)
         # Copy image to a new image. 
@@ -52,7 +53,7 @@ class CircleDetection:
         r,g,b = int(rgb[0].strip()), int(rgb[1].strip()), int(rgb[2].strip()) 
         color_tuple = (r,g,b)  
         #COLOR_TUPLE = (255, 0, 255)
-        THICKNESS = 5
+        #THICKNESS = 5
         # Declare local variables.
         a, b, r = 0, 0, 0
         # Draw detected circles.
@@ -67,7 +68,7 @@ class CircleDetection:
                 # Get the circle data.
                 a, b, r = pnt[0], pnt[1], pnt[2]
                 # Draw the circumference of the circle.
-                cv2.circle(newImg, (a, b), r, color_tuple, THICKNESS)
+                cv2.circle(newImg, (a, b), r, color_tuple, thickness)
                 # Draw a small circle of radius 1 to show the center.
                 cv2.circle(newImg, (a, b), 1, color_tuple, 3)
                 # Print dimensions and radius.
@@ -109,14 +110,14 @@ class CircleDetection:
         # Return detected_circles.
         return detected_circles
 
-    def post_img(self, img, detected_circles, debug, color_tuple):
+    def post_img(self, img, detected_circles, debug, color_tuple, thickness):
         '''Postprocess image.'''
         # Draw circles.
-        img, (a, b, r) = self.draw_circles(img, detected_circles, debug, color_tuple)
+        img, (a, b, r) = self.draw_circles(img, detected_circles, debug, color_tuple, thickness)
         # Return image and tuple.
         return img, (a, b, r)
 
-    def circle_detection(self, image, threshold_canny_edge, threshold_circle_center, minR, maxR, minDist, dp, color_tuple):
+    def circle_detection(self, image, threshold_canny_edge, threshold_circle_center, minR, maxR, minDist, dp, color_tuple, thickness):
         '''Main script function.'''
         # Print detection parameters.
         print("Threshold canny edge:", threshold_canny_edge)
@@ -136,7 +137,7 @@ class CircleDetection:
         # Process image. Detect circles.
         detected_circles = self.detect_circles(gray_blur, threshold_canny_edge, threshold_circle_center, minR, maxR, minDist, dp, debug)
         # Postrocess image.
-        img_output, _ = self.post_img(img_input, detected_circles, debug, color_tuple)
+        img_output, _ = self.post_img(img_input, detected_circles, debug, color_tuple, thickness)
         # Create output image.
         img_output = Image.fromarray(img_output)
         # Create tensor.
