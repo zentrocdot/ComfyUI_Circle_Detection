@@ -31,6 +31,7 @@ class CircleDetection:
 
     def draw_circles(self, img, detected_circles):
         print("*** DRAW CIRCLES ***")
+        print(type(img))
         COLOR_TUPLE = (255, 0, 255)
         THICKNESS = 5
         # Declare local variables.
@@ -43,6 +44,7 @@ class CircleDetection:
             for pnt in detected_circles[0, :]:
                 # Get the circle data.
                 a, b, r = pnt[0], pnt[1], pnt[2]
+                print(a,b,c)
                 # Draw the circumference of the circle.
                 cv2.circle(img, (a, b), r, COLOR_TUPLE, THICKNESS)
                 # Draw a small circle of radius 1 to show the center.
