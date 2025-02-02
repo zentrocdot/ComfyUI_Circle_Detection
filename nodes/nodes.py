@@ -32,7 +32,7 @@ class CircleDetection:
                 "dp": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 1000.0}),
                 "minDist": ("FLOAT", {"default": 20.0, "min": 0.0, "max": 2048.0}),
                 "color_tuple": ("STRING", {"multiline": False, "default": "(255, 0, 255)"}),
-                "thickness": ("FLOAT", {"default": 2.0, "min": 0.0, "max": 256.0}),
+                "thickness": ("INT", {"default": 2, "min": 0, "max": 256}),
             }
         }
 
