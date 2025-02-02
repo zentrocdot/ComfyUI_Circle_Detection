@@ -36,10 +36,7 @@ class CircleDetection:
     CATEGORY = "🧬 Object Detection Nodes"
     
     def draw_circles(self, img, detected_circles, debug):
-        print("*** DRAW CIRCLES ***")
-        print(type(img))
         newImg = img.copy()
-        print(type(img))
         COLOR_TUPLE = (255, 0, 255)
         THICKNESS = 5
         # Declare local variables.
@@ -61,7 +58,6 @@ class CircleDetection:
                 if debug: 
                     print("x:", a, "y", b, "r:", r)
         # Return image, co-ordinates and radius.
-        #return img, (a, b, r)
         return newImg, (a, b, r)
 
     def pre_img(self, img):
@@ -84,43 +80,22 @@ class CircleDetection:
         # Return blurred gray image.
         return gray_blur
 
-    def detect_circles(self, gray_blur, threshold_canny_edge, threshold_circle_center, minR, maxR, minDist, dp):
+    def detect_circles(self, gray_blur, threshold_canny_edge, threshold_circle_center, minR, maxR, minDist, dp, debug):
         '''Detect circles.'''
-        print("*** DETECT CIRCLES ***")
-        # Set some global variables. Circle Detection.
-        #MINR = 1
-        #MAXR = 512
-        #THRESHOLD_CANNY_EDGE = 50
-        #THRESHOLD_CIRCLE_CENTER = 30
-        #DP = 1
-        # Declare global variables
-        # Get rows and columns from shape and calculate min dist.
-        rows = gray_blur.shape[0]
-        columns = gray_blur.shape[1]
-        # Print rows and columns:
-        #if debug:
-        #    print("rows:", rows, "columns:", columns)
-        # Calculate value of minDist.
-        min_dist = int(((rows + columns) / 2) / 8)
-        print(min_dist)
-        # Print rows and columns:
-        #if debug:
-        #    print("minDist:", min_dist)
         # Apply a Hough transform on the blurred image.
         detected_circles = cv2.HoughCircles(gray_blur,
-                       cv2.HOUGH_GRADIENT, dp=dp, minDist=min_dist,
+                       cv2.HOUGH_GRADIENT, dp=dp, minDist=minDist,
                        param1=threshold_canny_edge,
                        param2=threshold_circle_center,
                        minRadius=minR, maxRadius=maxR)
         # Print detected data.
-        #if debug:
-        #    print("Detected circles:", detected_circles)
+        if debug:
+            print("Detected circles:", detected_circles)
         # Return detected_circles.
         return detected_circles
 
     def post_img(self, img, detected_circles, debug):
         '''Postprocess image.'''
-        print("*** PRE ***")
         # Draw circles.
         img, (a, b, r) = self.draw_circles(img, detected_circles, debug)
         # Return image and tuple.
@@ -128,26 +103,29 @@ class CircleDetection:
 
     def circle_detection(self, image, threshold_canny_edge, threshold_circle_center, minR, maxR, minDist, dp):
         '''Main script function.'''
-        print(type(image)) 
+        # Print detection parameters.
+        print("Threshold canny edge:", threshold_canny_edge)
+        print("Threshold circle center:", threshold_circle_center)
+        print("minR:", minR)
+        print("maxR:", maxR)
+        print("minDist:", minDist)
+        print("dp:", dp)
+        # Set the debug flag.
         debug = True
-        # Read image.
-        #img_input = cv2.imread(fn, cv2.IMREAD_COLOR)
+        # Create PIL image.
         img_input = tensor2pil(image)
-        print(type(img_input)) 
+        # Create numpy array.
         img_input = np.asarray(img_input)
-        print(type(img_input))
         # Preprocess image.
         gray_blur = self.pre_img(img_input)
         # Process image. Detect circles.
-        detected_circles = self.detect_circles(gray_blur, threshold_canny_edge, threshold_circle_center, minR, maxR, minDist, dp)
+        detected_circles = self.detect_circles(gray_blur, threshold_canny_edge, threshold_circle_center, minR, maxR, minDist, dp, debug)
         # Postrocess image.
         img_output, _ = self.post_img(img_input, detected_circles, debug)
         print(type(img_output))
-        # Write image.
-        #cv2.imwrite("detected_circle.jpg", img_output)
+        # Create output image.
         img_output = Image.fromarray(img_output)
-        print(type(img_output))
+        # Create tensor.
         image_out = pil2tensor(img_output)
-        print(type(image_out))
         # Return None.
         return (image_out,)
