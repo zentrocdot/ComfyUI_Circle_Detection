@@ -16,19 +16,12 @@ class CircleDetection:
 
     @classmethod
     def INPUT_TYPES(cls):
-
         return {
             "required": {
                 "image": ("IMAGE",),
                 "torchscript_jit": (["default", "on"],)
-                "image_width": ("INT", {"default": 512, "min": 64, "max": 2048}),
-                "image_height": ("INT", {"default": 512, "min": 64, "max": 2048}),        
-                "text": ("STRING", {"multiline": True, "default": "Hello World"}),
-                "font_size": ("INT", {"default": 50, "min": 1, "max": 1024}),
-                "font_color": (["white", "black", "red", "green", "blue", "yellow"],),
-                "background_color": (["white", "black", "red", "green", "blue", "yellow"],),
-                }
-            }
+            },
+        }
 
     RETURN_TYPES = ("IMAGE",)
     #RETURN_NAMES = ("IMAGE",)
