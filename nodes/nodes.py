@@ -49,7 +49,7 @@ class CircleDetection:
                 print(a,b,r)
                 # Draw the circumference of the circle.
                 #cv2.circle(img, (a, b), r, COLOR_TUPLE, THICKNESS)
-                #cv2.circle(newImg, (a, b), r, COLOR_TUPLE, THICKNESS)
+                cv2.circle(newImg, (a, b), r, COLOR_TUPLE, THICKNESS)
                 # Draw a small circle of radius 1 to show the center.
                 #cv2.circle(img, (a, b), 1, COLOR_TUPLE, 3)
                 #cv2.circle(newImg, (a, b), 1, COLOR_TUPLE, 3)
@@ -97,6 +97,7 @@ class CircleDetection:
         #    print("rows:", rows, "columns:", columns)
         # Calculate value of minDist.
         min_dist = int(((rows + columns) / 2) / 8)
+        print(min_dist)
         # Print rows and columns:
         #if debug:
         #    print("minDist:", min_dist)
