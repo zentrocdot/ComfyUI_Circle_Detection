@@ -22,10 +22,10 @@ class CircleDetection:
                 "image": ("IMAGE",),
                 "threshold_canny_edge": ("INT", {"default": 50, "min": 0, "max": 2048}),
                 "threshold_circle_center": ("INT", {"default": 30, "min": 0, "max": 2048}),
-                "minR": ("INT", {"default": 1, "min": 0, "max": 2048}),
-                "maxR": ("INT", {"default": 512, "min": 0, "max": 2048}),
-                "dp": ("FLOAT", {"default": 1, "min": 0, "max": 1000}),
-                "minDist": ("INT", {"default": 20, "min": 0, "max": 2048}),
+                "minR": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 2048.0}),
+                "maxR": ("FLOAT", {"default": 512.0, "min": 0.0, "max": 2048.0}),
+                "dp": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 1000.0}),
+                "minDist": ("FLOAT", {"default": 20.0, "min": 0.0, "max": 2048.0}),
             },
         }
 
