@@ -116,7 +116,8 @@ class CircleDetection:
         # Read image.
         #img_input = cv2.imread(fn, cv2.IMREAD_COLOR)
         # Preprocess image.
-        gray_blur = self.pre_img(img_input)
+        #gray_blur = self.pre_img(img_input)
+        gray_blur = self.pre_img(image)
         # Process image. Detect circles.
         detected_circles = self.detect_circles(gray_blur)
         # Postrocess image.
