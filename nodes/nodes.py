@@ -20,6 +20,8 @@ class CircleDetection:
         return {
             "required": {
                 "image": ("IMAGE",),
+                "threshold_canny_edge": ("INT", {"default": 50, "min": 0, "max": 2048}),
+                "treshold_circle_center": ("INT", {"default": 30, "min": 0, "max": 2048}),
             },
         }
 
