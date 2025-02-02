@@ -42,10 +42,13 @@ class CircleDetection:
     
     def draw_circles(self, img, detected_circles, debug, color_tuple_str):
         '''Draw circles.'''
+        print(color_tuple_str)
         # Copy image to a new image. 
         newImg = img.copy()
         strippedText = str(color_tuple_str).replace('(','').replace(')','').strip()
+        print(strippedText)
         rgb = strippedText.split(",")
+        print(rgb)
         r,g,b = rgb[0].strip(), rgb[1].strip(), rgb[2].strip() 
         color_tuple = (r,g,b)  
         #COLOR_TUPLE = (255, 0, 255)
