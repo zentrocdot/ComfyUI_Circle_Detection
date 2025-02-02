@@ -1,22 +1,27 @@
 #!/usr/bin/python
 
+# Import the Python modules.
 import numpy as np
 import cv2
 import torch
 from PIL import Image, ImageDraw, ImageFont
 
-# Tensor to PIL
+# Tensor to PIL function.
 def tensor2pil(image):
+    '''Tensor to PIL image.''' 
+    # Return PIL image.
     return Image.fromarray(np.clip(255. * image.cpu().numpy().squeeze(), 0, 255).astype(np.uint8))
 
-# Convert PIL to Tensor
+# Convert PIL to Tensor function.
 def pil2tensor(image):
+    '''PIL image to tensor.'''
+    # Return tensor.
     return torch.from_numpy(np.array(image).astype(np.float32) / 255.0).unsqueeze(0)
 
 class CircleDetection:
 
     @classmethod
-    def INPUT_TYPES(cls):
+    def INPUT_TYPES(self):
         return {
             "required": {
                 "image": ("IMAGE",),
@@ -26,17 +31,18 @@ class CircleDetection:
                 "maxR": ("INT", {"default": 512, "min": 0, "max": 2048}),
                 "dp": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 1000.0}),
                 "minDist": ("FLOAT", {"default": 20.0, "min": 0.0, "max": 2048.0}),
-            },
+                "color": ("STRING", {"multiline": False, "default": "(255, 0, 255)"}))
+            }
         }
 
     RETURN_TYPES = ("IMAGE",)
     #RETURN_NAMES = ("IMAGE",)
     FUNCTION = "circle_detection"
-    #CATEGORY = "🧬 Tutorial Nodes"
     CATEGORY = "🧬 Object Detection Nodes"
     
     def draw_circles(self, img, detected_circles, debug):
         '''Draw circles.'''
+        # Copy image to a new image. 
         newImg = img.copy()
         COLOR_TUPLE = (255, 0, 255)
         THICKNESS = 5
