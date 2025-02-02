@@ -141,7 +141,7 @@ class CircleDetection:
         # Preprocess image.
         gray_blur = self.pre_img(img_input)
         # Process image. Detect circles.
-        detected_circles = self.detect_circles(gray_blur)
+        detected_circles = self.detect_circles(gray_blur, threshold_canny_edge, threshold_circle_center, minR, maxR, minDist, dp)
         # Postrocess image.
         img_output, _ = self.post_img(img_input, detected_circles)
         print(type(img_output))
