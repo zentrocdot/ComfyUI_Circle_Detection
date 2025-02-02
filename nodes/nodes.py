@@ -126,10 +126,13 @@ class CircleDetection:
         detected_circles = self.detect_circles(gray_blur)
         # Postrocess image.
         img_output, _ = self.post_img(img_input, detected_circles)
+        print(type(img_output))
         # Write image.
         #cv2.imwrite("detected_circle.jpg", img_output)
         img_output = Image.fromarray(img_output)
+        print(type(img_output))
         image_out = pil2tensor(img_output)
+        print(type(image_ou))
         # Return None.
         return (image_out,)
 
