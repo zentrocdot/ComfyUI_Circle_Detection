@@ -1,4 +1,4 @@
-# ComfyUI Circle Detection
+# ComfyUI Circle Detection [![Copus - Post](https://img.shields.io/badge/Copus-Post-00aaee)](https://www.copus.io/work/93ba7f55a26845cd9666854a750a80f1)
 
 ## Introduction
 
