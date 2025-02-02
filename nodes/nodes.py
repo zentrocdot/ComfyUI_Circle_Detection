@@ -4,23 +4,31 @@ import numpy as np
 import torch
 from PIL import Image, ImageDraw, ImageFont
 
+# Tensor to PIL
 def pil2tensor(image):
     return torch.from_numpy(np.array(image).astype(np.float32) / 255.0).unsqueeze(0) 
+
+# Convert PIL to Tensor
+def pil2tensor(image):
+    return torch.from_numpy(np.array(image).astype(np.float32) / 255.0).unsqueeze(0)
          
 class CircleDetection:
 
     @classmethod
     def INPUT_TYPES(cls):
-               
-        return {"required": {
-                    "image_width": ("INT", {"default": 512, "min": 64, "max": 2048}),
-                    "image_height": ("INT", {"default": 512, "min": 64, "max": 2048}),        
-                    "text": ("STRING", {"multiline": True, "default": "Hello World"}),
-                    "font_size": ("INT", {"default": 50, "min": 1, "max": 1024}),
-                    "font_color": (["white", "black", "red", "green", "blue", "yellow"],),
-                    "background_color": (["white", "black", "red", "green", "blue", "yellow"],),
-                    }
+
+        return {
+            "required": {
+                "image": ("IMAGE",),
+                "torchscript_jit": (["default", "on"],)
+                "image_width": ("INT", {"default": 512, "min": 64, "max": 2048}),
+                "image_height": ("INT", {"default": 512, "min": 64, "max": 2048}),        
+                "text": ("STRING", {"multiline": True, "default": "Hello World"}),
+                "font_size": ("INT", {"default": 50, "min": 1, "max": 1024}),
+                "font_color": (["white", "black", "red", "green", "blue", "yellow"],),
+                "background_color": (["white", "black", "red", "green", "blue", "yellow"],),
                 }
+            }
 
     RETURN_TYPES = ("IMAGE",)
     #RETURN_NAMES = ("IMAGE",)
