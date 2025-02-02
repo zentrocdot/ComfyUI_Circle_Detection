@@ -36,6 +36,7 @@ class CircleDetection:
     CATEGORY = "🧬 Object Detection Nodes"
     
     def draw_circles(self, img, detected_circles, debug):
+        '''Draw circles.'''
         newImg = img.copy()
         COLOR_TUPLE = (255, 0, 255)
         THICKNESS = 5
@@ -45,24 +46,25 @@ class CircleDetection:
         if detected_circles is not None:
             # Convert the circle parameters a, b and r to integers.
             detected_circles = np.uint16(np.around(detected_circles))
-            # loop over the detected circles.
+            print(detected_circles)
+            # Loop over the detected circles.
+            count = 0
             for pnt in detected_circles[0, :]:
+                count += 1
                 # Get the circle data.
                 a, b, r = pnt[0], pnt[1], pnt[2]
-                print(a,b,r)
                 # Draw the circumference of the circle.
                 cv2.circle(newImg, (a, b), r, COLOR_TUPLE, THICKNESS)
                 # Draw a small circle of radius 1 to show the center.
                 cv2.circle(newImg, (a, b), 1, COLOR_TUPLE, 3)
                 # Print dimensions and radius.
                 if debug: 
-                    print("x:", a, "y", b, "r:", r)
+                    print("No.:", count, "x:", a, "y", b, "r:", r)
         # Return image, co-ordinates and radius.
         return newImg, (a, b, r)
 
     def pre_img(self, img):
         '''Preprocess image.'''
-        print("*** PRE ***")
         # Set some file names.
         img_1st = "gray_original.jpg"
         img_2nd = "gray_blurred.jpg"
@@ -122,7 +124,6 @@ class CircleDetection:
         detected_circles = self.detect_circles(gray_blur, threshold_canny_edge, threshold_circle_center, minR, maxR, minDist, dp, debug)
         # Postrocess image.
         img_output, _ = self.post_img(img_input, detected_circles, debug)
-        print(type(img_output))
         # Create output image.
         img_output = Image.fromarray(img_output)
         # Create tensor.
