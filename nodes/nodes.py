@@ -24,8 +24,9 @@ class CircleDetection:
                 "threshold_circle_center": ("INT", {"default": 30, "min": 0, "max": 2048}),
                 "minR": ("INT", {"default": 1, "min": 0, "max": 2048}),
                 "maxR": ("INT", {"default": 512, "min": 0, "max": 2048}),
-                "dp": ("INT", {"default": 1, "min": 0, "max": 1024}),
+                "dp": ("FLOAT", {"default": 1, "min": 0, "max": 1000}),
                 "minDist": ("INT", {"default": 20, "min": 0, "max": 2048}),
+                "VERBOSE": ("BOOL", {"default": False, "min": 0, "max": 2048})
             },
         }
 
@@ -152,20 +153,4 @@ class CircleDetection:
         image_out = pil2tensor(img_output)
         print(type(image_out))
         # Return None.
-        return (image_out,)
-
-    def draw_overlay_text(self, image_width, image_height, text,
-                   font_size, font_color, background_color):
-        # Create a new PIL image
-        new_img = Image.new("RGBA", (image_width, image_height), background_color)
-        draw = ImageDraw.Draw(new_img)
-        # Define font
-        font = ImageFont.truetype("arial.ttf", size=font_size)
-        # Get the image center
-        image_center_x = image_width/2
-        image_center_y = image_height/2
-        # Draw the text, mm = text center
-        draw.text((image_center_x, image_center_y), text, fill=font_color, font=font, anchor="mm")
-        # Convert the PIL image to a torch tensor
-        image_out = pil2tensor(new_img)
         return (image_out,)
