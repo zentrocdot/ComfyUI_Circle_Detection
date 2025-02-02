@@ -22,6 +22,10 @@ class CircleDetection:
                 "image": ("IMAGE",),
                 "threshold_canny_edge": ("INT", {"default": 50, "min": 0, "max": 2048}),
                 "treshold_circle_center": ("INT", {"default": 30, "min": 0, "max": 2048}),
+                "minR": ("INT", {"default": 1, "min": 0, "max": 2048}),
+                "maxR": ("INT", {"default": 512, "min": 0, "max": 2048}),
+                "dp": ("INT", {"default": 1, "min": 0, "max": 2048}),
+                "minDist": ("INT", {"default": 20, "min": 0, "max": 2048}),
             },
         }
 
@@ -81,15 +85,15 @@ class CircleDetection:
         # Return blurred gray image.
         return gray_blur
 
-    def detect_circles(self, gray_blur):
+    def detect_circles(self, gray_blur, threshold_canny_edge, threshold_circle_center, minR, maxR, minDist, dp):
         '''Detect circles.'''
         print("*** DETECT CIRCLES ***")
         # Set some global variables. Circle Detection.
-        MINR = 1
-        MAXR = 512
-        THRESHOLD_CANNY_EDGE = 50
-        THRESHOLD_CIRCLE_CENTER = 30
-        DP = 1
+        #MINR = 1
+        #MAXR = 512
+        #THRESHOLD_CANNY_EDGE = 50
+        #THRESHOLD_CIRCLE_CENTER = 30
+        #DP = 1
         # Declare global variables
         # Get rows and columns from shape and calculate min dist.
         rows = gray_blur.shape[0]
@@ -105,10 +109,10 @@ class CircleDetection:
         #    print("minDist:", min_dist)
         # Apply a Hough transform on the blurred image.
         detected_circles = cv2.HoughCircles(gray_blur,
-                       cv2.HOUGH_GRADIENT, dp=DP, minDist=min_dist,
-                       param1=THRESHOLD_CANNY_EDGE,
-                       param2=THRESHOLD_CIRCLE_CENTER,
-                       minRadius=MINR, maxRadius=MAXR)
+                       cv2.HOUGH_GRADIENT, dp=dp, minDist=min_dist,
+                       param1=threshold_canny_edge,
+                       param2=threshold_circle_center,
+                       minRadius=minR, maxRadius=maxR)
         # Print detected data.
         #if debug:
         #    print("Detected circles:", detected_circles)
@@ -125,7 +129,7 @@ class CircleDetection:
         # Return image and tuple.
         return img, (a, b, r)
 
-    def circle_detection(self, image):
+    def circle_detection(self, image, threshold_canny_edge, threshold_circle_center, minR, maxR, minDist, dp):
         '''Main script function.'''
         print(type(image)) 
         # Read image.
