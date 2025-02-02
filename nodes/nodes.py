@@ -5,7 +5,6 @@ import cv2
 import torch
 from PIL import Image, ImageDraw, ImageFont
 
-
 # Tensor to PIL
 def tensor2pil(image):
     return Image.fromarray(np.clip(255. * image.cpu().numpy().squeeze(), 0, 255).astype(np.uint8))
