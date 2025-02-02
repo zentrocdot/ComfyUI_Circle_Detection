@@ -44,7 +44,7 @@ class CircleDetection:
             for pnt in detected_circles[0, :]:
                 # Get the circle data.
                 a, b, r = pnt[0], pnt[1], pnt[2]
-                print(a,b,c)
+                print(a,b,r)
                 # Draw the circumference of the circle.
                 cv2.circle(img, (a, b), r, COLOR_TUPLE, THICKNESS)
                 # Draw a small circle of radius 1 to show the center.
