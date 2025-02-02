@@ -26,16 +26,15 @@ class CircleDetection:
                 "maxR": ("INT", {"default": 512, "min": 0, "max": 2048}),
                 "dp": ("FLOAT", {"default": 1, "min": 0, "max": 1000}),
                 "minDist": ("INT", {"default": 20, "min": 0, "max": 2048}),
-                "VERBOSE": ("BOOL", {"default": False, "min": 0, "max": 2048})
             },
         }
 
     RETURN_TYPES = ("IMAGE",)
     #RETURN_NAMES = ("IMAGE",)
-    #FUNCTION = "draw_overlay_text"
     FUNCTION = "circle_detection"
-    CATEGORY = "🧩 Tutorial Nodes"
-
+    #CATEGORY = "🧬 Tutorial Nodes"
+    CATEGORY = "🧬 Object Detection Nodes"
+    
     def draw_circles(self, img, detected_circles):
         print("*** DRAW CIRCLES ***")
         print(type(img))
