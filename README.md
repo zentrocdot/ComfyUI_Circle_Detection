@@ -2,15 +2,13 @@
 
 ## Introduction
 
-
+Next to AI mathematical methods can be used for the detection of objects like a circle.
 
 ## Usage
 
 After installation the node can be find in the node menu
 
 Add Node > 🧬 Object Detection Nodes > Circle Detection
-
-![Bildschirmfoto vom 2025-02-02 22-14-20](https://github.com/user-attachments/assets/2948a97a-edec-4c2a-a248-a0ebb7e988cf)
 
 ## Preview
 
