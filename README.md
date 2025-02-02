@@ -8,7 +8,7 @@ Next to AI mathematical methods can be used for the detection of objects like a 
 
 After installation the node can be find in the node menu
 
-Add Node > 🧬 Object Detection Nodes > Circle Detection
+  Add Node > 🧬 Object Detection Nodes > Circle Detection
 
 ## Preview
 
