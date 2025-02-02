@@ -143,7 +143,7 @@ class CircleDetection:
         img_output = Image.fromarray(img_output)
         print(type(img_output))
         image_out = pil2tensor(img_output)
-        print(type(image_ou))
+        print(type(image_out))
         # Return None.
         return (image_out,)
 
