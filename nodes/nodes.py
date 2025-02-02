@@ -105,7 +105,7 @@ class CircleDetection:
     def post_img(self, img, detected_circles):
         '''Postprocess image.'''
         # Draw circles.
-        img, (a, b, r) = draw_circles(img, detected_circles)
+        img, (a, b, r) = self.draw_circles(img, detected_circles)
         # Print dimensions and radius.
         #print("a:", a, "b:", b, "r:", r)
         # Return image and tuple.
@@ -116,11 +116,11 @@ class CircleDetection:
         # Read image.
         #img_input = cv2.imread(fn, cv2.IMREAD_COLOR)
         # Preprocess image.
-        gray_blur = pre_img(img_input)
+        gray_blur = self.pre_img(img_input)
         # Process image. Detect circles.
-        detected_circles = detect_circles(gray_blur)
+        detected_circles = self.detect_circles(gray_blur)
         # Postrocess image.
-        img_output, _ = post_img(img_input, detected_circles)
+        img_output, _ = self.post_img(img_input, detected_circles)
         # Write image.
         #cv2.imwrite("detected_circle.jpg", img_output)
         # Return None.
