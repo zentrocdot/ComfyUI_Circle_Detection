@@ -5,9 +5,10 @@ import cv2
 import torch
 from PIL import Image, ImageDraw, ImageFont
 
+
 # Tensor to PIL
-def pil2tensor(image):
-    return torch.from_numpy(np.array(image).astype(np.float32) / 255.0).unsqueeze(0)
+def tensor2pil(image):
+    return Image.fromarray(np.clip(255. * image.cpu().numpy().squeeze(), 0, 255).astype(np.uint8))
 
 # Convert PIL to Tensor
 def pil2tensor(image):
@@ -115,6 +116,7 @@ class CircleDetection:
         '''Main script function.'''
         # Read image.
         #img_input = cv2.imread(fn, cv2.IMREAD_COLOR)
+        img_input = tensor2pil(new_img)
         # Preprocess image.
         #gray_blur = self.pre_img(img_input)
         gray_blur = self.pre_img(image)
@@ -124,6 +126,7 @@ class CircleDetection:
         img_output, _ = self.post_img(img_input, detected_circles)
         # Write image.
         #cv2.imwrite("detected_circle.jpg", img_output)
+        image_out = pil2tensor(img_output)
         # Return None.
         return (image_out,)
 
