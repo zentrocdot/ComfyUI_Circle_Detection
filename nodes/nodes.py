@@ -30,6 +30,7 @@ class CircleDetection:
     CATEGORY = "🧩 Tutorial Nodes"
 
     def draw_circles(self, img, detected_circles):
+        print("*** DRAW CIRCLES ***")
         COLOR_TUPLE = (255, 0, 255)
         THICKNESS = 5
         # Declare local variables.
@@ -53,6 +54,7 @@ class CircleDetection:
 
     def pre_img(self, img):
         '''Preprocess image.'''
+        print("*** PRE ***")
         # Set some file names.
         #img_1st = "gray_original.jpg"
         #img_2nd = "gray_blurred.jpg"
@@ -72,6 +74,7 @@ class CircleDetection:
 
     def detect_circles(self, gray_blur):
         '''Detect circles.'''
+        print("*** DETECT CIRCLES ***")
         # Set some global variables. Circle Detection.
         MINR = 1
         MAXR = 512
@@ -104,6 +107,7 @@ class CircleDetection:
 
     def post_img(self, img, detected_circles):
         '''Postprocess image.'''
+        print("*** PRE ***")
         # Draw circles.
         img, (a, b, r) = self.draw_circles(img, detected_circles)
         # Print dimensions and radius.
