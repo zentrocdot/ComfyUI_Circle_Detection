@@ -128,6 +128,7 @@ class CircleDetection:
         img_output, _ = self.post_img(img_input, detected_circles)
         # Write image.
         #cv2.imwrite("detected_circle.jpg", img_output)
+        img_output = Image.fromarray(img_output)
         image_out = pil2tensor(img_output)
         # Return None.
         return (image_out,)
