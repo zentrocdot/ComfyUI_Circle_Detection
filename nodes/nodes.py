@@ -21,10 +21,10 @@ class CircleDetection:
             "required": {
                 "image": ("IMAGE",),
                 "threshold_canny_edge": ("INT", {"default": 50, "min": 0, "max": 2048}),
-                "treshold_circle_center": ("INT", {"default": 30, "min": 0, "max": 2048}),
+                "threshold_circle_center": ("INT", {"default": 30, "min": 0, "max": 2048}),
                 "minR": ("INT", {"default": 1, "min": 0, "max": 2048}),
                 "maxR": ("INT", {"default": 512, "min": 0, "max": 2048}),
-                "dp": ("INT", {"default": 1, "min": 0, "max": 2048}),
+                "dp": ("INT", {"default": 1, "min": 0, "max": 1024}),
                 "minDist": ("INT", {"default": 20, "min": 0, "max": 2048}),
             },
         }
