@@ -115,10 +115,9 @@ class CircleDetection:
         '''Main script function.'''
         # Read image.
         #img_input = cv2.imread(fn, cv2.IMREAD_COLOR)
-        img_input = tensor2pil(new_img)
+        img_input = tensor2pil(image)
         # Preprocess image.
-        #gray_blur = self.pre_img(img_input)
-        gray_blur = self.pre_img(image)
+        gray_blur = self.pre_img(img_input)
         # Process image. Detect circles.
         detected_circles = self.detect_circles(gray_blur)
         # Postrocess image.
