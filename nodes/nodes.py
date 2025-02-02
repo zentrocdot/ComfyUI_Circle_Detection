@@ -69,13 +69,13 @@ class CircleDetection:
         gray_org = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         # Write image to file.
         #if debug:
-        #    cv2.imwrite(img_1st, gray_org)
+        cv2.imwrite(img_1st, gray_org)
         # Blur image using a 3x3 kernel.
         kernel = (3, 3)
         gray_blur = cv2.blur(gray_org, kernel)
         # Write image to file.
         #if debug:
-        #    cv2.imwrite(img_2nd, gray_blur)
+        cv2.imwrite(img_2nd, gray_blur)
         # Return blurred gray image.
         return gray_blur
 
