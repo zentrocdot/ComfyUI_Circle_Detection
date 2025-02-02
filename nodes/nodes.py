@@ -63,8 +63,8 @@ class CircleDetection:
         '''Preprocess image.'''
         print("*** PRE ***")
         # Set some file names.
-        #img_1st = "gray_original.jpg"
-        #img_2nd = "gray_blurred.jpg"
+        img_1st = "gray_original.jpg"
+        img_2nd = "gray_blurred.jpg"
         # Convert image to grayscale.
         gray_org = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         # Write image to file.
