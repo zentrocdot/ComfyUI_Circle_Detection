@@ -109,7 +109,7 @@ class CircleDetection:
         # Return image and tuple.
         return img, (a, b, r)
 
-    def circle_detection(self, image, threshold_canny_edge, threshold_circle_center, minR, maxR, minDist, dp):
+    def circle_detection(self, image, threshold_canny_edge, threshold_circle_center, minR, maxR, minDist, dp, color_tuple):
         '''Main script function.'''
         # Print detection parameters.
         print("Threshold canny edge:", threshold_canny_edge)
