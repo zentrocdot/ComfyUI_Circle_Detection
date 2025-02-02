@@ -1,5 +1,7 @@
 # ComfyUI Circle Detection
 
+## Introduction
+
 ## Usage
 
 ![Bildschirmfoto vom 2025-02-02 22-14-20](https://github.com/user-attachments/assets/2948a97a-edec-4c2a-a248-a0ebb7e988cf)
