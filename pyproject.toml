@@ -1,0 +1,14 @@
+[project]
+name = "circle_detection"
+description = "Next to AI mathematical methods can be used for the detection of objects like a circle."
+version = "1.0.0"
+license = {file = "LICENSE"}
+
+[project.urls]
+Repository = "https://github.com/zentrocdot/ComfyUI_Circle_Detection"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI_Circle_Detection"
+Icon = ""
