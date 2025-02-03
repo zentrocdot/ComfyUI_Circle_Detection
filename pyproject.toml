@@ -1,7 +1,7 @@
 [project]
 name = "circle_detection"
 description = "ComfyUI_Circle_Detection detects circles using a mathematical method called Houghs Transform for the detection."
-version = "1.0.0"
+version = "0.0.0.2"
 license = {file = "LICENSE"}
 
 [project.urls]
