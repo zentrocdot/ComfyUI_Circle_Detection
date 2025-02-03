@@ -24,6 +24,10 @@ version 0.0.0.2
 
 *Figure 1: Preview of workflow using the circle detection node* 
 
+## Remarks
+
+The first image created is the one, where on can see, which circles are found. The seond image looks like a mas, but it is not for the moment. 
+It is still an blank image, where the found circles are filled drawn. 
 
 ## References
 
