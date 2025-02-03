@@ -1,9 +1,9 @@
 [project]
 name = "comfyui-circle-detection"
 description = "ComfyUI_Circle_Detection detects circles using a mathematical method called Houghs Transform for the detection."
-version = "0.0.2"
+version = "0.0.0.2"
 license = "LICENSE"
-dependencies = ["PyMuPDF", "python-docx", "pandas", "Markdown", "PyYAML"]
+dependencies = ["pillow", "torch"]
 
 [project.urls]
 Repository = "https://github.com/zentrocdot/ComfyUI_Circle_Detection"
