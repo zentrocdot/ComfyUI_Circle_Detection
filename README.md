@@ -12,9 +12,18 @@ After installation the node can be find in the node menu
 
 ## Preview
 
+version 0.0.0.1
+
 ![Bildschirmfoto vom 2025-02-02 22-08-34](https://github.com/user-attachments/assets/60386026-9e15-4508-b6d9-dade02bb44d7)
 
 *Figure 1: Preview of workflow using the circle detection node* 
+
+version 0.0.0.2
+
+![Bildschirmfoto vom 2025-02-03 20-06-43](https://github.com/user-attachments/assets/95ec4a2e-f0f6-4ba7-8a89-c3fdf6b1125f)
+
+*Figure 1: Preview of workflow using the circle detection node* 
+
 
 ## References
 
