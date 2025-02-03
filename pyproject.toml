@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-circle-detection"
+description = "ComfyUI_Circle_Detection detects circles using a mathematical method called Houghs Transform for the detection."
+version = "0.0.2"
+license = "LICENSE"
+dependencies = ["PyMuPDF", "python-docx", "pandas", "Markdown", "PyYAML"]
+
+[project.urls]
+Repository = "https://github.com/zentrocdot/ComfyUI_Circle_Detection"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI_Circle_Detection"
+Icon = ""
