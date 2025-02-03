@@ -10,6 +10,6 @@ Repository = "https://github.com/zentrocdot/ComfyUI_Circle_Detection"
 #  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
-PublisherId = "2ac5c8ff-686c-4f18-a4bc-2166c23cb1a5"
+PublisherId = "zentrocdot"
 DisplayName = "ComfyUI_Circle_Detection"
 Icon = ""
