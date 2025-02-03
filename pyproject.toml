@@ -1,9 +1,8 @@
 [project]
-name = "comfyui-circle-detection"
+name = "circle_detection"
 description = "ComfyUI_Circle_Detection detects circles using a mathematical method called Houghs Transform for the detection."
-version = "0.0.0.2"
-license = "LICENSE"
-dependencies = ["pillow", "torch"]
+version = "1.0.0"
+license = {file = "LICENSE"}
 
 [project.urls]
 Repository = "https://github.com/zentrocdot/ComfyUI_Circle_Detection"
@@ -12,4 +11,4 @@ Repository = "https://github.com/zentrocdot/ComfyUI_Circle_Detection"
 [tool.comfy]
 PublisherId = "zentrocdot"
 DisplayName = "ComfyUI_Circle_Detection"
-Icon = ""
+Icon = "https://github.com/zentrocdot/ComfyUI_Circle_Detection/blob/main/images/original_512x512.png"
