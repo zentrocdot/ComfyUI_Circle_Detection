@@ -52,8 +52,8 @@ The help output can be shown with an text/string ouptput node.
 
 ### Setting exclude_circles   
 
-As I wrote earlier mathematical methods produce on each run the same results. One can take advantage of this.
-After first run one can exclude circles which were detected in the first run.
+<p align="justify">As I wrote earlier mathematical methods produce on each run the same results. One can take advantage of this.
+After first run one can exclude circles which were detected in the first run.</p>p>
 
 ## Version Previews
 
@@ -97,8 +97,8 @@ Troubleshooting in the node programming and sanitizing up the code.
 
 ## Remarks
 
-The first image created is the one, where on can see, which circles are found. The seond image looks like a mask, but it is not for the moment. 
-It is still an blank image, where the found circles are filled drawn. This changed in version 0.0.0.3.
+<p align="justify">The first image created is the one, where on can see, which circles are found. The seond image looks like a mask, but it is not for the moment. 
+It is still an blank image, where the found circles are filled drawn. This changed in version 0.0.0.3.</p>
 
 ## References
 
