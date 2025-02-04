@@ -46,14 +46,14 @@ The help output can be shown with an text/string ouptput node.
 - thickness
 - exclude_circles
 
+### Preview of Settings
+
 ![Bildschirmfoto vom 2025-02-04 18-37-44](https://github.com/user-attachments/assets/fb961545-28ee-4694-8888-65eebd92b31b)
 
 ### Setting exclude_circles   
 
 As I wrote earlier mathematical methods produce on each run the same results. One can take advantage of this.
 After first run one can exclude circles which were detected in the first run.
-
-<code> </code>
 
 ## Version Previews
 
