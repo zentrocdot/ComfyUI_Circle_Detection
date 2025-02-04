@@ -14,6 +14,13 @@ For showing data one can use following node
 
    Add Node > 🧬 Circle Detection Nodes > 🗃 Circle Detection
 
+## What the Node Does
+
+The input of the node is an image. The output of the node is
+
++ image_output
++ image mask
+
 ## Version Previews
 
 version 0.0.0.1
