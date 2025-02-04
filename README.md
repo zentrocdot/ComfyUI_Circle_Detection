@@ -46,14 +46,18 @@ The help output can be shown with an text/string ouptput node.
 - thickness
 - exclude_circles
 
-### Preview of Settings
+#### Preview of Settings
 
 ![Bildschirmfoto vom 2025-02-04 18-37-44](https://github.com/user-attachments/assets/fb961545-28ee-4694-8888-65eebd92b31b)
 
-### Setting exclude_circles   
+#### Setting color_tuple_cicles
+
+<p align="justify">color_tiple_circle sets the color of the circle which marks the setected circle.</p>
+
+#### Setting exclude_circles   
 
 <p align="justify">As I wrote earlier mathematical methods produce on each run the same results. One can take advantage of this.
-After first run one can exclude circles which were detected in the first run.</p>p>
+After first run one can exclude circles which were detected in the first run.</p>
 
 ## Version Previews
 
