@@ -49,7 +49,7 @@ class ShowData:
     INPUT_IS_LIST = (True,)
     OUTPUT_NODE = True
 
-    CATEGORY = "🧬 Object Detection Nodes"
+    CATEGORY = "🧬 Circle Detection Nodes"
     FUNCTION = "process_data"
 
     def process_data(self, input, data, unique_id):
