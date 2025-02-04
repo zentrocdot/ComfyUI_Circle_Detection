@@ -103,6 +103,9 @@ It is still an blank image, where the found circles are filled drawn. This chang
 ## References
 
 [1] https://docs.opencv.org/3.4/d4/d70/tutorial_hough_circle.html
+
 [2] https://github.com/exectails/comfyui-et_infoutils
+
 [3] https://github.com/rgthree/rgthree-comfy
+
 [4] https://github.com/pythongosssss/ComfyUI-Custom-Scripts
