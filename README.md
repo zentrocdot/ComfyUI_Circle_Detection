@@ -22,7 +22,21 @@ version 0.0.0.2
 
 ![Bildschirmfoto vom 2025-02-03 20-06-43](https://github.com/user-attachments/assets/95ec4a2e-f0f6-4ba7-8a89-c3fdf6b1125f)
 
-*Figure 1: Preview of workflow using the circle detection node* 
+*Figure 2: Preview of workflow using the circle detection node* 
+
+version 0.0.0.3
+
+![Bildschirmfoto vom 2025-02-04 16-19-47](https://github.com/user-attachments/assets/93a799c4-1533-44fa-8334-0223221efcb2)
+
+*Figure 3: Preview of workflow using the circle detection node* 
+
+## Installation
+
+Use the ComfyUI Manager for the installation of the node.
+
+You can also move int the directory ComfyUI/custom_nodes
+
+git clone https://github.com/zentrocdot/ComfyUI_Circle_Detection
 
 ## Remarks
 
