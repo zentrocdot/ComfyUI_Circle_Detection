@@ -14,6 +14,8 @@ For showing data one can use following node
 
 * Add Node > 🧬 Circle Detection Nodes > 🗃 Circle Detection
 
+<p align="justify">The first 
+
 ## What the Node Does
 
 The input of the node is an image. The output of the node is
@@ -88,3 +90,4 @@ It is still an blank image, where the found circles are filled drawn. This chang
 ## References
 
 [1] https://docs.opencv.org/3.4/d4/d70/tutorial_hough_circle.html
+[2] https://github.com/exectails/comfyui-et_infoutils
