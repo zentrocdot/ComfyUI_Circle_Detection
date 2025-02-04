@@ -40,7 +40,7 @@ Use the ComfyUI Manager for the installation of the node.
 
 You can also move int the directory ComfyUI/custom_nodes
 
-git clone https://github.com/zentrocdot/ComfyUI_Circle_Detection
+<code>git clone https://github.com/zentrocdot/ComfyUI_Circle_Detection</code>
 
 # To-Do
 
