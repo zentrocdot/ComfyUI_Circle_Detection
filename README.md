@@ -32,8 +32,6 @@ version 0.0.0.3
 
 <img src="./images/ComfyUI_0010.jpeg" alt="button panel" width="512">
 
-![Bildschirmfoto vom 2025-02-04 16-19-47](https://github.com/user-attachments/assets/93a799c4-1533-44fa-8334-0223221efcb2)
-
 *Figure 3: Preview of workflow using the circle detection node* 
 
 ## Installation
@@ -47,10 +45,10 @@ You can also move int the directory ComfyUI/custom_nodes
 # Example
 
 <img src="./images/ComfyUI_0001.jpeg" alt="button panel" width="512">
-<p><i>Figure 1: Original image</i></p>
+<p><i>Figure 4: Original image</i></p>
 
 <img src="./images/ComfyUI_0002.jpeg" alt="button panel" width="512">
-<p><i>Figure 2: Image with circles detected</i></p>
+<p><i>Figure 5: Image with circles detected</i></p>
 
 # To-Do
 
