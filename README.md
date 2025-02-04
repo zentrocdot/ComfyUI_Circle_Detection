@@ -44,16 +44,15 @@ You can also move int the directory ComfyUI/custom_nodes
 
 # Example
 
-<a target="_blank" href=""><img src="./images/ComfyUI_0001.jpeg" alt="button panel"></a>
-<p><i>Figure 1: Web userinterface in a web browser without image</i></p>
+<img src="./images/ComfyUI_0001.jpeg" alt="button panel">
+<p><i>Figure 1: Original image</i></p>
 
-<a target="_blank" href=""><img src="./images/ComfyUI_0002.jpeg" alt="button panel"></a>
-<p><i>Figure 1: Web userinterface in a web browser without image</i></p>
+<img src="./images/ComfyUI_0002.jpeg" alt="button panel">
+<p><i>Figure 2: Image with circles detected</i></p>
 
 # To-Do
 
 Troubleshooting in the node programming and sanitizing up the code.
-
 
 ## Remarks
 
