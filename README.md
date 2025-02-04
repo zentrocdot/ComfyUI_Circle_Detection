@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Next to AI mathematical methods can be used for the detection of objects like a circle. This node is using Hough's transform for the detection of circles in an given image.
+<p align="justify">Next to AI mathematical methods can be used for the detection of objects like a circle. This node is using Hough's transform for the detection of circles in an given image. The advantage of mathematical methods is that the recognised circles can be virtually predicted. I utilise this to create masks.</p>
 
 ## Usage
 
