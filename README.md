@@ -46,7 +46,7 @@ The help output can be shown with an text/string ouptput node.
 - thickness
 - exclude_circles
 
-![Bildschirmfoto vom 2025-02-04 18-37-44](https://github.com/user-attachments/assets/8703fef3-a6f9-4081-acad-cfdbb038f5d1)
+![Bildschirmfoto vom 2025-02-04 18-37-44](https://github.com/user-attachments/assets/fb961545-28ee-4694-8888-65eebd92b31b)
 
 ### Setting exclude_circles   
 
