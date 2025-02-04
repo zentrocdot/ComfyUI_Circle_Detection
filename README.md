@@ -22,11 +22,14 @@ For showing data one can use following node
 
 The input of the node is an image. The output of the node is
 
-+ image_output
-+ image_mask
-+ mask
-+ data
-+ help
+- NODE INPUT
+  + image 
+- NODE OUTPUT
+  + image_output
+  + image_mask
+  + mask
+  + data
+  + help
 
 The help output can be shown with an text/string ouptput node. 
 
