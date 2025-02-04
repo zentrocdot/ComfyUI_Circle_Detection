@@ -14,7 +14,7 @@ For showing data one can use following node
 
 * Add Node > 🧬 Circle Detection Nodes > 🗃 Circle Detection
 
-<p align="justify">The first 
+<p align="justify">The first node is the node for the circle detection. The second node is for viewing data from the circle detection node.</p>
 
 ## What the Node Does
 
