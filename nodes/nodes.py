@@ -143,7 +143,7 @@ class CircleDetection:
     def circle_detection(self, image, threshold_canny_edge, threshold_circle_center, minR, maxR, minDist, dp,
                          color_tuple_circle, color_tuple_bg, color_tuple_fg, thickness, exclude_circles):
         '''Main script function.'''
-        if exclude != "":
+        if exclude_circles != "":
             inlist = exclude.split(",")
             exlist = list(map(str.strip, inlist))
             exlist = list(map(int, exlist))
