@@ -18,6 +18,8 @@ For showing data one can use following node
 
 ## What the Node Does
 
+### Node Input / Output
+
 The input of the node is an image. The output of the node is
 
 + image_output
@@ -28,7 +30,9 @@ The input of the node is an image. The output of the node is
 
 The help output can be shown with an text/string ouptput node. 
 
-Settings:
+### Settings
+
+#### List of Settings
 
 - threshold_canny_edge
 - threshold_circle_center
@@ -41,6 +45,15 @@ Settings:
 - color_tuple_fg
 - thickness
 - exclude_circles
+
+![Bildschirmfoto vom 2025-02-04 18-37-44](https://github.com/user-attachments/assets/8703fef3-a6f9-4081-acad-cfdbb038f5d1)
+
+### Setting exclude_circles   
+
+As I wrote earlier mathematical methods produce on each run the same results. One can take advantage of this.
+After first run one can exclude circles which were detected in the first run.
+
+<code> </code>
 
 ## Version Previews
 
