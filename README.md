@@ -43,7 +43,9 @@ For showing the data one needs a text/string output node.
 The help output can be shown with an text/string ouptput node. 
 
 > [!NOTE]  
-> <p align="justify">help is feature that should make it in the future easier to work with the node.</p>
+> <p align="justify">help is a feature that should make it in
+> the future easier to work with the node without visiting this
+> documentation.</p>
 
 ### Settings
 
