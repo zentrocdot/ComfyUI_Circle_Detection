@@ -44,10 +44,10 @@ You can also move int the directory ComfyUI/custom_nodes
 
 # Example
 
-<img src="./images/ComfyUI_0001.jpeg" alt="button panel">
+<img src="./images/ComfyUI_0001.jpeg" alt="button panel" width="512">
 <p><i>Figure 1: Original image</i></p>
 
-<img src="./images/ComfyUI_0002.jpeg" alt="button panel">
+<img src="./images/ComfyUI_0002.jpeg" alt="button panel" width="512">
 <p><i>Figure 2: Image with circles detected</i></p>
 
 # To-Do
