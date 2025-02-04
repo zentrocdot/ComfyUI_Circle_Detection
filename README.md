@@ -44,10 +44,10 @@ You can also move int the directory ComfyUI/custom_nodes
 
 # Example
 
-<a target="_blank" href=""><img src="./images/ComfyUI_0001" alt="button panel"></a>
+<a target="_blank" href=""><img src="./images/ComfyUI_0001.jpeg" alt="button panel"></a>
 <p><i>Figure 1: Web userinterface in a web browser without image</i></p>
 
-<a target="_blank" href=""><img src="./images/ComfyUI_0002" alt="button panel"></a>
+<a target="_blank" href=""><img src="./images/ComfyUI_0002.jpeg" alt="button panel"></a>
 <p><i>Figure 1: Web userinterface in a web browser without image</i></p>
 
 # To-Do
