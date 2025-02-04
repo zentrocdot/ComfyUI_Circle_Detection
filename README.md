@@ -42,10 +42,14 @@ You can also move int the directory ComfyUI/custom_nodes
 
 git clone https://github.com/zentrocdot/ComfyUI_Circle_Detection
 
+# 
+
+Troubleshooting in the node programming and sanitizing up the code.
+
 ## Remarks
 
-The first image created is the one, where on can see, which circles are found. The seond image looks like a mas, but it is not for the moment. 
-It is still an blank image, where the found circles are filled drawn. 
+The first image created is the one, where on can see, which circles are found. The seond image looks like a mask, but it is not for the moment. 
+It is still an blank image, where the found circles are filled drawn. This changed in version 0.0.0.3.
 
 ## References
 
