@@ -19,7 +19,26 @@ For showing data one can use following node
 The input of the node is an image. The output of the node is
 
 + image_output
-+ image mask
++ image_mask
++ mask
++ data
++ help
+
+The help output can be shown with an text/string ouptput node. 
+
+Settings:
+
+- threshold_canny_edge
+- threshold_circle_center
+- minR
+- maxR
+- dp
+- minDist
+- color_tuple_cicles
+- color_tuple_bg
+- color_tuple_fg
+- thickness
+- exclude_circles
 
 ## Version Previews
 
