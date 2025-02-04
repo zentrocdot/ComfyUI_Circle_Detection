@@ -10,6 +10,10 @@ After installation the node can be find in the node menu
 
   Add Node > 🧬 Circle Detection Nodes > 🔬 Circle Detection
 
+For showing data one can use following node
+
+   Add Node > 🧬 Circle Detection Nodes > 🗃 Circle Detection
+
 ## Version Previews
 
 version 0.0.0.1
