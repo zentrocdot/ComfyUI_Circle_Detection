@@ -10,7 +10,7 @@ After installation the node can be find in the node menu
 
   Add Node > 🧬 Object Detection Nodes > 🔬 Circle Detection
 
-## Preview
+## Version Previews
 
 version 0.0.0.1
 
