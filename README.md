@@ -1,8 +1,16 @@
 # ComfyUI Circle Detection Node [![Copus - Post](https://img.shields.io/badge/Copus-Post-00aaee)](https://www.copus.io/work/93ba7f55a26845cd9666854a750a80f1) [![ComfyUI - Homepage](https://img.shields.io/badge/ComfyUI-Homepage-aa00ee)](https://github.com/comfyanonymous/ComfyUI)
 
+> [!IMPORTANT]  
+> <p align="justify">🚧 This documentation is still under construction. 
+> Please note also that the node is not catching all errors e.g. on wrong
+> settings. This is on my to-do list.</p>
+
 ## Introduction
 
-<p align="justify">Next to AI mathematical methods can be used for the detection of objects like a circle. This node is using Hough's transform for the detection of circles in an given image. The advantage of mathematical methods is that the recognised circles can be virtually predicted. I utilise this to create masks.</p>
+<p align="justify">Next to AI mathematical methods can be used for the detection
+of objects like a circle. This node is using Hough's transform for the detection
+of circles in an given image. The advantage of mathematical methods is that the
+recognised circles can be virtually predicted. I utilise this to create masks.</p>
 
 ## Usage
 
