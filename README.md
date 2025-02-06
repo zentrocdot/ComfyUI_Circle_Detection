@@ -13,11 +13,16 @@ detection of circles in an given image. The advantage of mathematical methods is
 that the recognised circles can be virtually predicted. I utilise this to create
 circle masks.</p>
 
-## Goal
+## Goal of the Circle Detection Node
 
+To explain the goal is best done using an example. Take the office under the sea. If I want to move this
+office in outer space, I have to exchange the content seen in the portholes. By use of the node this can easily done.
 
 ![ComfyUI_00429_ (Kopie)](https://github.com/user-attachments/assets/cd32605f-402c-4d87-b20b-ab9881b0a4c3)
 
+Applying the node and inpainting one gets.
+
+![ComfyUI_temp_jgphx_00003_](https://github.com/user-attachments/assets/09dabbf0-8e59-4610-98c6-e5a344954748)
 
 ## Usage
 
