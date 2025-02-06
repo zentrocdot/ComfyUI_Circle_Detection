@@ -15,8 +15,9 @@ circle masks.</p>
 
 ## Goal of the Circle Detection Node
 
-To explain the goal is best done using an example. Take the office under the sea. If I want to move this
-office in outer space, I have to exchange the content seen in the portholes. By use of the node this can easily done.
+<p align="justify">To explain the goal is best done using an example. Take the 
+office under the sea. If I want to move this
+office in outer space, I have to exchange the content seen in the portholes. By use of the node this can easily done.</p>
 
 ![ComfyUI_00429_ (Kopie)](https://github.com/user-attachments/assets/cd32605f-402c-4d87-b20b-ab9881b0a4c3)
 
