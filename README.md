@@ -149,6 +149,10 @@ Troubleshooting in the node programming and sanitizing up the code.
 <p align="justify">The first image created is the one, where on can see, which circles are found. The seond image looks like a mask, but it is not for the moment. 
 It is still an blank image, where the found circles are filled drawn. This changed in version 0.0.0.3.</p>
 
+## Open Issues
+
+<p align="justify">It is unclear, if the JavaScript event trigger for updating the Show Data window will work.</p>
+
 ## References
 
 [1] https://docs.opencv.org/3.4/d4/d70/tutorial_hough_circle.html
