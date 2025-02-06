@@ -102,6 +102,7 @@ You can also move int the directory ComfyUI/custom_nodes
 
 version 0.0.0.2
 
+![Bildschirmfoto vom 2025-02-03 20-06-43](https://github.com/user-attachments/assets/80c6c715-3f73-4478-a3aa-ee6cd5f9f82d)
 
 
 
