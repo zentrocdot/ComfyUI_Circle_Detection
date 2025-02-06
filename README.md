@@ -39,6 +39,7 @@ After installation the node can be find in the node menu
 For showing data one can use following node
 
 * Add Node > 🧬 Circle Detection Nodes > 📄 Show Data
+
 For the input of data one can use following node
 
 * Add Node > 🧬 Circle Detection Nodes > ✏️ Input Data
@@ -53,13 +54,17 @@ The second node is for viewing data from the circle detection node.</p>
 The input of the node is an image. The output of the node is
 
 - NODE INPUT
-  + image 
+  + image (required)
+  + color_tuple_bg (optional)
+  + color_tuple_fg (optional)
+  + exclude_circles (optional)
 - NODE OUTPUT
   + image_output
   + image_mask
-  + mask
-  + data
-  + help
+  + standard_mask
+  + inverted_mask
+  + show_terminal_data
+  + circle_detection_help
 
 For showing the data one needs a text/string output node.
 The help output can be shown with an text/string ouptput node. 
