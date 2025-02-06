@@ -43,7 +43,6 @@ For the input of data one can use following node
 
 * Add Node > 🧬 Circle Detection Nodes > ✏️ Input Data
 
-
 <p align="justify">The first node is the node for the circle detection.
 The second node is for viewing data from the circle detection node.</p>
 
@@ -89,6 +88,8 @@ The help output can be shown with an text/string ouptput node.
 - number_size
 
 #### Preview of Settings
+
+<p align="justify">The preview images of the first four versions in form of a workflow are shown below.</p>
 
 ![Bildschirmfoto vom 2025-02-06 16-41-25](https://github.com/user-attachments/assets/9e6bd8f5-b4c3-44ca-956b-f0a6bccba17f)
 
