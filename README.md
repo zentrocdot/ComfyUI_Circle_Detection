@@ -75,14 +75,13 @@ The help output can be shown with an text/string ouptput node.
 - color_tuple_bg
 - color_tuple_fg
 - thickness
-- exclude_circles
+- show_circle_center
+- numbering
+- number_size
 
 #### Preview of Settings
 
 ![Bildschirmfoto vom 2025-02-06 16-41-25](https://github.com/user-attachments/assets/9e6bd8f5-b4c3-44ca-956b-f0a6bccba17f)
-
-
-![Bildschirmfoto vom 2025-02-04 18-37-44](https://github.com/user-attachments/assets/fb961545-28ee-4694-8888-65eebd92b31b)
 
 #### Setting color_tuple_cicles
 
