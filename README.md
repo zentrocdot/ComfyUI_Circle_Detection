@@ -23,7 +23,8 @@ For showing data one can use following node
 
 * Add Node > 🧬 Circle Detection Nodes > 🗃 Circle Detection
 
-<p align="justify">The first node is the node for the circle detection. The second node is for viewing data from the circle detection node.</p>
+<p align="justify">The first node is the node for the circle detection.
+The second node is for viewing data from the circle detection node.</p>
 
 ## What the Node Does
 
@@ -89,14 +90,11 @@ version 0.0.0.3
 
 ![Bildschirmfoto vom 2025-02-04 16-19-47](https://github.com/user-attachments/assets/ae0fc9e5-9af6-4ab7-9e50-9403b470670f)
 
-
 *Figure 3: Preview of workflow using the circle detection node* 
 
 version 0.0.0.2
 
 ![Bildschirmfoto vom 2025-02-03 20-06-43](https://github.com/user-attachments/assets/80c6c715-3f73-4478-a3aa-ee6cd5f9f82d)
-
-![Bildschirmfoto vom 2025-02-03 20-06-43](https://github.com/user-attachments/assets/95ec4a2e-f0f6-4ba7-8a89-c3fdf6b1125f)
 
 *Figure 2: Preview of workflow using the circle detection node* 
 
