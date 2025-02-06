@@ -121,6 +121,10 @@ The help output can be shown with an text/string ouptput node.
 <p align="justify">As I wrote earlier mathematical methods produce on each run the same results. One can take advantage of this.
 After first run one can exclude circles which were detected in the first run.</p>
 
+#### Setting numbering
+
+The numbering of the detected circles can be enabled/disabled by this setting.
+
 ## Special Feature
 
 <p align="justify">After first run detected circles can be excluded by use of the optional input connector.</p>
@@ -176,12 +180,22 @@ Troubleshooting in the node programming and sanitizing up the code.
 
 ## Remarks
 
-<p align="justify">The first image created is the one, where on can see, which circles are found. The seond image looks like a mask, but it is not for the moment. 
-It is still an blank image, where the found circles are filled drawn. This changed in version 0.0.0.3.</p>
+<p align="justify">The first image created is the one, where on
+can see, which circles are found. The seond image looks like a mask,
+but it is not for the moment. It is still an blank image, where the
+found circles are filled drawn. This changed in version 0.0.0.3.</p>
 
 ## Open Issues
 
-<p align="justify">It is unclear, if the JavaScript event trigger for updating the Show Data window will work.</p>
+<p align="justify">It is unclear, if the JavaScript event trigger
+for updating the Show Data window will all the time work. This has
+to be checked.</p>
+
+If a circle is not perfect or a circle is deformed or malformed such 
+a circle cannot be detected with his contour. I have to develop a 
+node, which can identify such malformed/deformed circles. 
+
+The last one is a parallel activity for the detection of ellipses.
 
 ## References
 
