@@ -90,9 +90,6 @@ version 0.0.0.3
 ![Bildschirmfoto vom 2025-02-04 16-19-47](https://github.com/user-attachments/assets/ae0fc9e5-9af6-4ab7-9e50-9403b470670f)
 
 
-
-<img src="./images/ComfyUI_0010.jpeg" alt="button panel" width="512">
-
 *Figure 3: Preview of workflow using the circle detection node* 
 
 ## Installation
@@ -104,6 +101,9 @@ You can also move int the directory ComfyUI/custom_nodes
 <code>git clone https://github.com/zentrocdot/ComfyUI_Circle_Detection</code>
 
 version 0.0.0.2
+
+
+
 
 ![Bildschirmfoto vom 2025-02-03 20-06-43](https://github.com/user-attachments/assets/95ec4a2e-f0f6-4ba7-8a89-c3fdf6b1125f)
 
