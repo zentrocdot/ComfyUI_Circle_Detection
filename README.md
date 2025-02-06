@@ -11,7 +11,13 @@
 of objects like a circle. This node is using Hough's Circle Transform for the
 detection of circles in an given image. The advantage of mathematical methods is 
 that the recognised circles can be virtually predicted. I utilise this to create
-masks.</p>
+circle masks.</p>
+
+## Goal
+
+
+![ComfyUI_00429_ (Kopie)](https://github.com/user-attachments/assets/cd32605f-402c-4d87-b20b-ab9881b0a4c3)
+
 
 ## Usage
 
