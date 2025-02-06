@@ -87,6 +87,10 @@ version 0.0.0.4
 
 version 0.0.0.3
 
+![Bildschirmfoto vom 2025-02-04 16-19-47](https://github.com/user-attachments/assets/ae0fc9e5-9af6-4ab7-9e50-9403b470670f)
+
+
+
 <img src="./images/ComfyUI_0010.jpeg" alt="button panel" width="512">
 
 *Figure 3: Preview of workflow using the circle detection node* 
