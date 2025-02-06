@@ -45,14 +45,16 @@ For the input of data one can use following node
 * Add Node > 🧬 Circle Detection Nodes > ✏️ Input Data
 
 <p align="justify">The first node is the node for the circle detection.
-The second node is for viewing data from the circle detection node.</p>
+The second node is for viewing data from the circle detection node. The
+third node is for the input of the optional data.</p>
 
 ## What the Node Does
 
 ### Basic Feature
 
-<p align="justify">The basic feature of the node is the detection of circles in images. The second featur is the 
-creation of a mask from the detected circles.</p>
+<p align="justify">The basic feature of the node is the detection of 
+circles in images. The second feature is the creation of a mask from the
+detected circles.</p>
 
 ### Node Input / Output
 
@@ -70,6 +72,11 @@ The input of the node is an image. The output of the node is
   + inverted_mask
   + show_terminal_data
   + circle_detection_help
+
+The image output is an image where the detected circles are marked. 
+The image mask is a colored image consisting of background and foreground.
+A standard mask as well as an inverted mask can be used for a further 
+processing of the image.
 
 For showing the data one needs a text/string output node.
 The help output can be shown with an text/string ouptput node. 
