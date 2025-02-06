@@ -1,9 +1,11 @@
 from .nodes.nodes import *
 from .nodes.showdatanodes import *
+from .nodes.inputdatanodes import *
 
 NODE_CLASS_MAPPINGS = { 
     "🔬 Circle Detection": CircleDetection,
-    "🗃 Show Data": ShowData,
+    "📄 Show Data": ShowData,
+    "✏️ Input Data": InputData,
     }
     
 WEB_DIRECTORY = "./js"
