@@ -16,8 +16,9 @@ circle masks.</p>
 ## Goal of the Circle Detection Node
 
 <p align="justify">To explain the goal is best done using an example. Take the 
-office under the sea. If I want to move this
-office in outer space, I have to exchange the content seen in the portholes. By use of the node this can easily done.</p>
+office under the sea. If I want to move this office in outer space, I have to
+exchange the content seen in the portholes. By use of the node this can easily
+done.</p>
 
 ![ComfyUI_00429_ (Kopie)](https://github.com/user-attachments/assets/cd32605f-402c-4d87-b20b-ab9881b0a4c3)
 
@@ -37,7 +38,11 @@ After installation the node can be find in the node menu
 
 For showing data one can use following node
 
-* Add Node > 🧬 Circle Detection Nodes > 🗃 Circle Detection
+* Add Node > 🧬 Circle Detection Nodes > 📄 Show Data
+For the input of data one can use following node
+
+* Add Node > 🧬 Circle Detection Nodes > ✏️ Input Data
+
 
 <p align="justify">The first node is the node for the circle detection.
 The second node is for viewing data from the circle detection node.</p>
