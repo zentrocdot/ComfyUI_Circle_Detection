@@ -1,29 +1,35 @@
 #!/usr/bin/python
 '''Object detection node.'''
+# pylint: disable=too-many-locals
+# pylint: disable=bare-except
 # pylint: disable=no-member
 # pylint: disable=line-too-long
 # pylint: disable=invalid-name
 # pylint: disable=too-many-positional-arguments
 # pylint: disable=too-many-arguments
-# pylint: disable=too-many-locals
-# pylint: disable=bare-except
 
 # Import the Python modules.
+from PIL import Image
 import numpy as np
 import cv2
 import torch
-from PIL import Image
+
+HELP_STR = "threshold values of 100 → results in accurate recognition\n" + \
+"dp > 1.0 for deformed circles\n" + \
+"minDist → max(width, height) / 8\n" + \
+"minR → minimum radius in detection\n" + \
+"maxR → maximum radius in detection"
 
 # Tensor to PIL function.
 def tensor2pil(image):
     '''Tensor to PIL image.'''
-    # Return PIL image.
+    # Return a PIL image.
     return Image.fromarray(np.clip(255. * image.cpu().numpy().squeeze(), 0, 255).astype(np.uint8))
 
 # Convert PIL to Tensor function.
 def pil2tensor(image):
     '''PIL image to tensor.'''
-    # Return tensor.
+    # Return a tensor.
     return torch.from_numpy(np.array(image).astype(np.float32) / 255.0).unsqueeze(0)
 
 class CircleDetection:
@@ -37,26 +43,33 @@ class CircleDetection:
                 "image": ("IMAGE",),
                 "threshold_canny_edge": ("FLOAT", {"default": 50, "min": 0, "max": 2048}),
                 "threshold_circle_center": ("FLOAT", {"default": 30, "min": 0, "max": 2048}),
-                "minR": ("INT", {"default": 1, "min": 0, "max": 2048}),
-                "maxR": ("INT", {"default": 512, "min": 0, "max": 2048}),
-                "dp": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 1000.0}),
+                "minR": ("INT", {"default": 1, "min": 1, "max": 2048}),
+                "maxR": ("INT", {"default": 512, "min": 1, "max": 2048}),
+                "dp": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 1000.0, "step": 0.1}),
                 "minDist": ("FLOAT", {"default": 20.0, "min": 0.0, "max": 2048.0}),
                 "color_tuple_circle": ("STRING", {"multiline": False, "default": "(255, 0, 255)"}),
-                "color_tuple_bg": ("STRING", {"multiline": False, "default": "(255, 0, 0)"}),
-                "color_tuple_fg": ("STRING", {"multiline": False, "default": "(0, 0, 255)"}),
-                "thickness": ("INT", {"default": 2, "min": 0, "max": 256}),
-                "exclude_circles": ("STRING", {"multiline": False, "default": ""}),
+                "thickness": ("INT", {"default": 2, "min": 1, "max": 256}),
+                "show_circle_center": ("BOOLEAN", {"default": True, "label_on": "on", "label_off": "off"}),
+                "numbering": ("BOOLEAN", {"default": True, "label_on": "on", "label_off": "off"}),
+                "number_size": ("INT", {"default": 1, "min": 1, "max": 256}),
+            },
+            "optional": {
+                "color_tuple_bg": ("STRING", {"forceInput": True}),
+                "color_tuple_fg": ("STRING", {"forceInput": True}),
+                "exclude_circles": ("STRING", {"forceInput": True}),
             }
         }
 
-    RETURN_TYPES = ("IMAGE", "IMAGE", "MASK", "STRING", "STRING")
-    RETURN_NAMES = ("image_output", "image_mask", "mask", "data", "help")
+    RETURN_TYPES = ("IMAGE", "IMAGE", "MASK", "MASK", "STRING", "STRING")
+    RETURN_NAMES = ("image_output", "image_mask", "standard_mask", "inverted_mask", "show_terminal_data", "circle_detection_help")
     FUNCTION = "circle_detection"
     CATEGORY = "🧬 Circle Detection Nodes"
+    DESCRIPTION = "Mathematical circle detection using Hough's Transform."
     OUTPUT_NODE = True
 
-    def draw_circles(self, img, detected_circles, debug, color_tuple_str, color_tuple_bg, color_tuple_fg, thickness, exlist):
+    def draw_circles(self, img, detected_circles, debug, color_tuple_str, thickness, color_tuple_bg, color_tuple_fg, exlist, mode, number_size, show_circle_center):
         '''Draw circles.'''
+        print("Draw:", thickness)
         def string2tuple(color_str):
             color_tuple = (0,0,0)
             try:
@@ -66,6 +79,7 @@ class CircleDetection:
                 color_tuple = (r, g, b)
             except:
                 print("ERROR. Could not create color tuple!")
+                color_tuple = (128,128,128)
             return color_tuple
         # Create the color tuples.
         color_tuple = string2tuple(color_tuple_str)
@@ -97,11 +111,14 @@ class CircleDetection:
                     a, b, r = pnt[0], pnt[1], pnt[2]
                     # Draw the circumference of the circle.
                     cv2.circle(newImg, (a, b), r, color_tuple, thickness)
-                    cv2.putText(newImg, str(count), (a,b), cv2.FONT_HERSHEY_SIMPLEX, 2, 255, 4)
+                    if mode:
+                        size = number_size
+                        cv2.putText(newImg, str(count), (a,b), cv2.FONT_HERSHEY_SIMPLEX, size, color_tuple, thickness, cv2.LINE_AA)
                     cv2.circle(blank_image, (a, b), r, color_tuple_fg, -1)
                     cv2.circle(maskImage, (a, b), r, (255,255,255), -1)
                     # Draw a small circle of radius 1 to show the center.
-                    cv2.circle(newImg, (a, b), 1, color_tuple, 3)
+                    if show_circle_center:
+                        cv2.circle(newImg, (a, b), 1, color_tuple, 3)
                     # Print dimensions and radius.
                     if debug:
                         print("No.:", count, "x:", a, "y", b, "r:", r)
@@ -133,18 +150,22 @@ class CircleDetection:
         # Return detected_circles.
         return detected_circles
 
-    def post_img(self, img, detected_circles, debug, color_tuple, color_tuple_bg, color_tuple_fg, thickness, exlist):
+    def post_img(self, img, detected_circles, debug, color_tuple, color_tuple_bg, color_tuple_fg,
+                           thickness, exlist, mode, number_size, show_circle_center):
         '''Postprocess image.'''
         # Draw circles.
-        img, (a, b, r), outstr, blank_image, maskImage  = self.draw_circles(img, detected_circles, debug, color_tuple, color_tuple_bg, color_tuple_fg, thickness, exlist)
+        img, (a, b, r), outstr, blank_image, maskImage  = self.draw_circles(img, detected_circles, debug, color_tuple, thickness,
+                                                            color_tuple_bg, color_tuple_fg, exlist, mode, number_size, show_circle_center)
+
         # Return image and tuple.
         return img, (a, b, r), outstr, blank_image, maskImage
 
-    def circle_detection(self, image, threshold_canny_edge, threshold_circle_center, minR, maxR, minDist, dp,
-                         color_tuple_circle, color_tuple_bg, color_tuple_fg, thickness, exclude_circles):
+    def circle_detection(self, image, threshold_canny_edge, threshold_circle_center,
+                         minR, maxR, minDist, dp, color_tuple_circle, thickness, numbering, number_size, show_circle_center,
+                         color_tuple_bg="(255,0,0)", color_tuple_fg="(0,0,255)", exclude_circles=""):
         '''Main script function.'''
         if exclude_circles != "":
-            inlist = exclude.split(",")
+            inlist = exclude_circles.split(",")
             exlist = list(map(str.strip, inlist))
             exlist = list(map(int, exlist))
         else:
@@ -167,21 +188,19 @@ class CircleDetection:
         # Process image. Detect circles.
         detected_circles = self.detect_circles(gray_blur, threshold_canny_edge, threshold_circle_center, minR, maxR, minDist, dp, debug)
         # Postrocess image.
-        img_output, _, out_string, blank_image, maskImage = self.post_img(img_input, detected_circles, debug, color_tuple_circle, color_tuple_bg, color_tuple_fg, thickness, exlist)
+        img_output, _, out_string, blank_image, maskImage = self.post_img(img_input, detected_circles, debug, color_tuple_circle,
+                                                                          color_tuple_bg, color_tuple_fg, thickness, exlist, numbering,
+                                                                           number_size, show_circle_center)
         # Create output image.
         img_output = Image.fromarray(img_output)
-        # Create tensor.
+        # Create tensors.
         image_out = pil2tensor(img_output)
         blank_image = pil2tensor(blank_image)
         maskImage = pil2tensor(maskImage)
-        # Return None.
+        # Create final mask.
         channel = "red"
         channels = ["red", "green", "blue", "alpha"]
         mask = maskImage[:, :, :, channels.index(channel)]
-        help_str = "threshold 100 → accurate recognition\n" + \
-        "dp > 1.0 for deformed circles\n" + \
-        "minDist → max(width, height) / 8\n" + \
-        "minR → minimum radius in detection\n" + \
-        "maxR → maximum radius in detection"
+        invertedmask = 1 - mask
         # Return the return types.
-        return (image_out, blank_image, mask, out_string, help_str)
+        return (image_out, blank_image, mask, invertedmask, out_string, HELP_STR)
