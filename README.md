@@ -78,17 +78,11 @@ After first run one can exclude circles which were detected in the first run.</p
 
 ## Version Previews
 
-version 0.0.0.1
+version 0.0.0.4
 
-![Bildschirmfoto vom 2025-02-02 22-08-34](https://github.com/user-attachments/assets/60386026-9e15-4508-b6d9-dade02bb44d7)
+![Bildschirmfoto vom 2025-02-06 14-52-46](https://github.com/user-attachments/assets/fd4189a4-e853-4513-ba46-e439c072f778)
 
-*Figure 1: Preview of workflow using the circle detection node* 
-
-version 0.0.0.2
-
-![Bildschirmfoto vom 2025-02-03 20-06-43](https://github.com/user-attachments/assets/95ec4a2e-f0f6-4ba7-8a89-c3fdf6b1125f)
-
-*Figure 2: Preview of workflow using the circle detection node* 
+*Figure 4: Preview of workflow using the circle detection node* 
 
 version 0.0.0.3
 
@@ -103,6 +97,18 @@ Use the ComfyUI Manager for the installation of the node.
 You can also move int the directory ComfyUI/custom_nodes
 
 <code>git clone https://github.com/zentrocdot/ComfyUI_Circle_Detection</code>
+
+version 0.0.0.2
+
+![Bildschirmfoto vom 2025-02-03 20-06-43](https://github.com/user-attachments/assets/95ec4a2e-f0f6-4ba7-8a89-c3fdf6b1125f)
+
+*Figure 2: Preview of workflow using the circle detection node* 
+
+version 0.0.0.1
+
+![Bildschirmfoto vom 2025-02-02 22-08-34](https://github.com/user-attachments/assets/60386026-9e15-4508-b6d9-dade02bb44d7)
+
+*Figure 1: Preview of workflow using the circle detection node* 
 
 # Example
 
