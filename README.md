@@ -24,7 +24,7 @@ done.</p>
 
 *Figure 1: Original image*
 
-Applying the node and inpainting one gets.
+Using the capabilities of the node together with a painted mask and applying inpainting one gets.
 
 ![ComfyUI_temp_jgphx_00003_](https://github.com/user-attachments/assets/09dabbf0-8e59-4610-98c6-e5a344954748)
 
@@ -51,7 +51,8 @@ The second node is for viewing data from the circle detection node.</p>
 
 ### Basic Feature
 
-<p align="justify">The basic feature of the node is the detection of circles in images.</p>
+<p align="justify">The basic feature of the node is the detection of circles in images. The second featur is the 
+creation of a mask from the detected circles.</p>
 
 ### Node Input / Output
 
