@@ -104,6 +104,13 @@ The help output can be shown with an text/string ouptput node.
 <p align="justify">As I wrote earlier mathematical methods produce on each run the same results. One can take advantage of this.
 After first run one can exclude circles which were detected in the first run.</p>
 
+## Special Feature
+
+<p align="justify">After first run detected circles can be excluded by use of the optional input connector.</p>
+
+![Bildschirmfoto vom 2025-02-06 14-58-32](https://github.com/user-attachments/assets/109662d4-ee5e-4cf4-8d98-deb24120fb37)
+
+
 ## Version Previews
 
 version 0.0.0.4
