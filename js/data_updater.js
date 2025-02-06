@@ -2,6 +2,7 @@
 import { app } from "../../../scripts/app.js";
 import { api } from "../../../scripts/api.js";
 
+// Register Extension. 
 app.registerExtension({
   name: "zentrocdot.data_updater",
   async setup() {
