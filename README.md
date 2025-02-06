@@ -21,9 +21,13 @@ office in outer space, I have to exchange the content seen in the portholes. By 
 
 ![ComfyUI_00429_ (Kopie)](https://github.com/user-attachments/assets/cd32605f-402c-4d87-b20b-ab9881b0a4c3)
 
+*Figure 1: Original image*
+
 Applying the node and inpainting one gets.
 
 ![ComfyUI_temp_jgphx_00003_](https://github.com/user-attachments/assets/09dabbf0-8e59-4610-98c6-e5a344954748)
+
+*Figure 2: Inpainted image*
 
 ## Usage
 
@@ -83,6 +87,8 @@ The help output can be shown with an text/string ouptput node.
 
 ![Bildschirmfoto vom 2025-02-06 16-41-25](https://github.com/user-attachments/assets/9e6bd8f5-b4c3-44ca-956b-f0a6bccba17f)
 
+*Figure 2: Circle detection node*
+
 #### Setting color_tuple_cicles
 
 <p align="justify">color_tiple_circle sets the color of the circle which marks the setected circle.</p>
@@ -98,25 +104,25 @@ version 0.0.0.4
 
 ![Bildschirmfoto vom 2025-02-06 14-52-46](https://github.com/user-attachments/assets/fd4189a4-e853-4513-ba46-e439c072f778)
 
-*Figure 4: Preview of workflow using the circle detection node* 
+*Figure 3: Preview of workflow using the circle detection node* 
 
 version 0.0.0.3
 
 ![Bildschirmfoto vom 2025-02-04 16-19-47](https://github.com/user-attachments/assets/ae0fc9e5-9af6-4ab7-9e50-9403b470670f)
 
-*Figure 3: Preview of workflow using the circle detection node* 
+*Figure 4: Preview of workflow using the circle detection node* 
 
 version 0.0.0.2
 
 ![Bildschirmfoto vom 2025-02-03 20-06-43](https://github.com/user-attachments/assets/80c6c715-3f73-4478-a3aa-ee6cd5f9f82d)
 
-*Figure 2: Preview of workflow using the circle detection node* 
+*Figure 5: Preview of workflow using the circle detection node* 
 
 version 0.0.0.1
 
 ![Bildschirmfoto vom 2025-02-02 22-08-34](https://github.com/user-attachments/assets/60386026-9e15-4508-b6d9-dade02bb44d7)
 
-*Figure 1: Preview of workflow using the circle detection node* 
+*Figure 6: Preview of workflow using the circle detection node* 
 
 ## Installation
 
@@ -129,10 +135,10 @@ You can also move int the directory ComfyUI/custom_nodes
 # Example
 
 <img src="./images/ComfyUI_0001.jpeg" alt="button panel" width="512">
-<p><i>Figure 4: Original image</i></p>
+<p><i>Figure 7: Original image</i></p>
 
 <img src="./images/ComfyUI_0002.jpeg" alt="button panel" width="512">
-<p><i>Figure 5: Image with circles detected</i></p>
+<p><i>Figure 8: Image with circles detected</i></p>
 
 # To-Do
 
