@@ -32,7 +32,7 @@ Applying the node and inpainting one gets.
 
 ## Usage
 
-After installation the node can be find in the node menu
+<p align="justify">After installation the node can be find in the node menu by searching for the entry <code>🧬 Circle Detection Nodes</code>.</p>
 
 * Add Node > 🧬 Circle Detection Nodes > 🔬 Circle Detection
 
@@ -48,6 +48,10 @@ For the input of data one can use following node
 The second node is for viewing data from the circle detection node.</p>
 
 ## What the Node Does
+
+### Basic Feature
+
+<p align="justify">The basic feature of the node is the detection of circles in images.</p>
 
 ### Node Input / Output
 
