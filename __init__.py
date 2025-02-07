@@ -1,9 +1,11 @@
-from .nodes.nodes import *
+from .nodes.hough_circle import *
 from .nodes.showdatanodes import *
 from .nodes.inputdatanodes import *
+from .nodes.simple_ellipse import *
 
 NODE_CLASS_MAPPINGS = { 
-    "🔬 Circle Detection": CircleDetection,
+    "🔬 Circle Detection (Hough)": CircleDetection,
+    "🔬 Ellipse Detection (Simple)": EllipseDetection,
     "📄 Show Data": ShowData,
     "✏️ Input Data": InputData,
     }
